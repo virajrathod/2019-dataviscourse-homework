@@ -9,7 +9,7 @@ We suggest you clone this repository:
 git clone https://github.com/dataviscourse/2018-dataviscourse-homework
 ```
 
-To receive updates and add newly released homeworks update your repository by cd-ing into the `2018-dataviscourse-homework` directory and running:
+To receive updates and add newly released homeworks update your repository by cd-ing into the `2019-dataviscourse-homework` directory and running:
 
 ```
 git pull
@@ -17,4 +17,4 @@ git pull
 
 ## Submitting Homeworks
 
-Please submit homeworks using the appropriate [canvas dropbox](https://utah.instructure.com/courses/503254/).
+Please submit homeworks using the appropriate canvas dropbox.
