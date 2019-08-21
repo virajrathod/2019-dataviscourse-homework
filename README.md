@@ -5,8 +5,8 @@ More information can be found on the [course website](http://dataviscourse.net/)
 
 We suggest you clone this repository: 
 
-``` 
-git clone https://github.com/dataviscourse/2018-dataviscourse-homework
+```
+git clone https://github.com/dataviscourse/2019-dataviscourse-homework
 ```
 
 To receive updates and add newly released homeworks update your repository by cd-ing into the `2019-dataviscourse-homework` directory and running:
