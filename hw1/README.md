@@ -29,7 +29,7 @@ Implement your solution in a file called ``hw1.html``, which you should store in
 
 You can choose your design parameters freely, i.e., things like the color, aspect ratio and size of your charts is up to you. You need to make sure, however, that the data can be clearly read and follows good visualization design practice. Note that you will probably need to make some kind of (manual) transformation to the data to achieve pleasant results, i.e., when plotting a bar chart, the value `10` can't be just mapped to pixels.  
 
-You **must use selectors to style your SVG elements**, i.e., you should not use inline styling. You should also not use classes or identifiers more than necessary for each chart, i.e., one class definition per chart should be sufficient.  There are good reasons to use both css class selectors and element selectors in this homework.
+You **must use selectors to style your SVG elements**, i.e., you should not use inline styling. You should also not use classes or identifiers more than necessary for each chart.  There are good reasons to use both css class selectors and element selectors in this homework.
 
 Make sure your submission is a valid HTML5 file. Check that it is valid by uploading it to the [W3C HTML Validator](https://validator.w3.org/#validate_by_upload).
 
