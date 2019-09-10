@@ -31,6 +31,7 @@ function update(data) {
 
   console.log(data);
   // Set up the scales
+  // TODO: The scales below are examples, modify the ranges and domains to suit your implementation.
   let aScale = d3
     .scaleLinear()
     .domain([0, d3.max(data, d => d.a)])
