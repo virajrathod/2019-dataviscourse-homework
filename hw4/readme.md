@@ -130,14 +130,14 @@ You will have data that will size the circles called circleSizeIndicator. We hav
 ![Gap Plot](figs/gapplot.PNG)
 
 ### 2.2 The Drop-down Menus
-There are three drop down menus: the x and y data menus, and the circle data menu. Changing the menus redraws the plot from the currently selected data.The drop-drown structure is provided for you, but you will set up the `drawPlot()` function to be called when a new data set is selected. All three drop down menus will have all of the data categories (Child mortality, GDP per capita, Life expectancy, Fertility rate, and Population) to select from.
+There are three drop down menus: the x and y data menus, and the circle data menu. Changing the menus redraws the plot from the currently selected data.The drop-drown structure is provided for you, but you will set up the `updatePlot()` function to be called when a new data set is selected. All three drop down menus will have all of the data categories (Child mortality, GDP per capita, Life expectancy, Fertility rate, and Population) to select from.
 
 This gif shows the desired behavior:
 
 ![Gap Plot Data Change](figs/data-change.gif)
 
 ### 2.3 The Year Slider
-The year slider will call the `drawPlot()` function on drag. When you move the slider, you should be able to watch the bubbles in the plot move and update. The year slider is provided for you, but you will have to set up the `drawPlot()` function call to pass the new year to draw the plot. Remember the years range from **1880 to 2020**. When the users changes the years slider, call the `updateYear(year)` callback to notify the relevant views.  
+The year slider will call the `updatePlot()` function on drag. When you move the slider, you should be able to watch the bubbles in the plot move and update. The year slider is provided for you, but you will have to set up the `updatePlot()` function call to pass the new year to draw the plot. Remember the years range from **1880 to 2020**. When the users changes the years slider, call the `updateYear(year)` callback to notify the relevant views.  
 
 This gif shows the desired behavior: 
 
