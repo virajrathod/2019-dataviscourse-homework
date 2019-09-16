@@ -169,6 +169,7 @@ Along with the ability to highlight on select, we need to be able to clear a sel
 Now that we can select countries, we are going to pass the selected country information to an info box view. The info panel will update when a country element is selected from either the map or scatterplot views. When the year slider moves, the panel should also update along with the scatterplot. The info box should show all information about the country from all datasets. You will have to fill out the `updateTextDescription()` in the InfoBox class and call this within the `sript.js` file. For the changing of years in the data, you will need to fill out the `updateYear(year)` function in `script.js` and call it within the year slider to update the views.
 `updateTextDescription()` takes `activeCountry` and `activeYear` and for each of the key-value pairs in this.data, creates an `infoBoxData` object. `InfoBoxData` that takes the 4 parameters: 
 1. country (the country name from the data)
+2. region (the region accociated with the selected country)
 3. indicator_name (the name of the data category, such as 'Life Expectancy')
 4. value (the atual number value for the data indicator at the specified year)
 
