@@ -62,7 +62,7 @@ You can view the page at [http://localhost:8080](http://localhost:8080). Before 
 
 ## The Data
 
-Your map will use GeoJSON data that is contained in the `world.json` file. The data is split into several csv files, one each for **child mortality**, **GDP per capita**, **life expectancy**, **fertility rate**, and **population** for countries. Each files contains data for every year from 1880 to 2020; take a look at the files to understand the structure. We are using data from the [GapMinder data repository](https://www.gapminder.org/data/). We provided the data loading for you, but you will have to pass the data to the corresponding view objects in `script.js`. 
+Your map will use GeoJSON data that is contained in the `world.json` file. The data is split into several csv files, one each for **child mortality**, **GDP per capita**, **life expectancy**, **fertility rate**, and **population** for countries. Each files contains data for every year from 1800 to 2020; take a look at the files to understand the structure. We are using data from the [GapMinder data repository](https://www.gapminder.org/data/). We provided the data loading for you, but you will have to pass the data to the corresponding view objects in `script.js`. 
 
 Here is a sample of the population data: 
 
@@ -137,7 +137,7 @@ This gif shows the desired behavior:
 ![Gap Plot Data Change](figs/data-change.gif)
 
 ### 2.3 The Year Slider
-The year slider will call the `updatePlot()` function on drag. When you move the slider, you should be able to watch the bubbles in the plot move and update. The year slider is provided for you, but you will have to set up the `updatePlot()` function call to pass the new year to draw the plot. Remember the years range from **1880 to 2020**. When the users changes the years slider, call the `updateYear(year)` callback to notify the relevant views.  
+The year slider will call the `updatePlot()` function on drag. When you move the slider, you should be able to watch the bubbles in the plot move and update. The year slider is provided for you, but you will have to set up the `updatePlot()` function call to pass the new year to draw the plot. Remember the years range from **1800 to 2020**. When the users changes the years slider, call the `updateYear(year)` callback to notify the relevant views.  
 
 This gif shows the desired behavior: 
 
@@ -169,6 +169,7 @@ Along with the ability to highlight on select, we need to be able to clear a sel
 Now that we can select countries, we are going to pass the selected country information to an info box view. The info panel will update when a country element is selected from either the map or scatterplot views. When the year slider moves, the panel should also update along with the scatterplot. The info box should show all information about the country from all datasets. You will have to fill out the `updateTextDescription()` in the InfoBox class and call this within the `sript.js` file. For the changing of years in the data, you will need to fill out the `updateYear(year)` function in `script.js` and call it within the year slider to update the views.
 `updateTextDescription()` takes `activeCountry` and `activeYear` and for each of the key-value pairs in this.data, creates an `infoBoxData` object. `InfoBoxData` that takes the 4 parameters: 
 1. country (the country name from the data)
+2. region (the region accociated with the selected country)
 3. indicator_name (the name of the data category, such as 'Life Expectancy')
 4. value (the atual number value for the data indicator at the specified year)
 
