@@ -284,7 +284,7 @@ Where `.id` is unique identifier for each node and `.parentId` indicates what fi
 
 *This syntax might be strange to you. `d3.stratify()` returns a function, and the function that stratify returns is later called using the `(data)` expression. Hence, the function returned by `stratify()` is then run with data as a parameter. The function that is returned, however, also has parameters - `id` and `parentid` that we can set. In other words, `d3.stratify()` is a generator for a function to stratify your dataset.* 
 
-Once you have created the tree, color the nodes for winning teams in red and losing teams in blue as in the figure below. 
+Once you have created the tree, color the nodes for winning teams in blue and losing teams in red as in the figure below.
 
 ![tree](figs/tree.png)
 
