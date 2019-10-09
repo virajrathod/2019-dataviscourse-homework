@@ -13,6 +13,8 @@ We've retrieved the data from [538's public data repositories](https://github.co
 ## Learning Goals
 We're not providing code stubs for this homework; so one of the learning goals is to explore how to design such a visualizations. Most of what you will implementing is already familiar, with the exception of burshes and (basic) storytelling functionality.
 
+![Here is a demo of the functionality.](assets/demo.mp4).
+
 ## Implementation
 
 As in previous homeworks, add your name, your e-mail address, and your UID to the HTML elements at the top. Also make sure your submission is a valid HTML5 file. Check that it is valid by uploading it to the [W3C HTML Validator](https://validator.w3.org/#validate_by_upload).
@@ -55,7 +57,7 @@ You will need to create a tooltip that shows the N-gram, the political differenc
 ![Table](figs/tooltip.png)
 
 #### Summary of the things you need for the bubblechart:
-* Circle plot with two states: together and separated by group. Transitions are animated.
+* Bubblechart with two states: together and separated by group. Transitions are animated.
 * Toggle or button that toggles the separation of the categories.
 * Size of circle encodes total use of N-gram.
 * Circles are colored by category
@@ -76,7 +78,7 @@ When you click on the headers, the table should be sorted by that column. Clicki
 * Two of the four columns should be a visual encoding.
 
 ## Part 4. Brushes
-You should be able to brush the grouped version and the separated version of the bubble plot. By brushing, you update what is seen in the table view. If you click on the bubble plot, the brushes should clear. For more information on brushes, see the d3 documentation on [brushes](https://github.com/d3/d3-brush).
+You should be able to brush the grouped version and the separated version of the bubble plot. By brushing, you update what is seen in the table view. If you click on the bubble plot, the brushes should clear.They should clear on toggling group by topic. For more information on brushes, see the d3 documentation on [brushes](https://github.com/d3/d3-brush).
 
 Here's how brushes should work:
 
@@ -90,6 +92,7 @@ For the example, we highlighted the most extreme terms for both political partie
 #### Summary of the things you need for storytelling:
 * Highlight something about the data that you find interesting.
 * The user should be able to show the panel with the highlight and then remove the panel in a controlled way.
+
 
 ## Grading
 
