@@ -36,7 +36,7 @@
   * then calls the appropriate functions to create and populate the table.
   *
   */
- d3.csv("data/fifa-matches.csv", function (error, matchesCSV) {
+ d3.csv("data/fifa-matches-2018.csv", function (error, matchesCSV) {
 
     /**
     * Loads in the tree information from fifa-tree.csv and calls createTree(csvData) to render the tree.
@@ -99,7 +99,7 @@
 
     matchArray.forEach(function(d){ d.value['Result'] = resultRanks[d.value['Result']]});
 
-    d3.csv("data/fifa-tree.csv", function (error, treeCSV) {
+    d3.csv("data/fifa-tree-2018.csv", function (error, treeCSV) {
 
         //Create a unique "id" field for each game
         treeCSV.forEach(function (d, i) {
