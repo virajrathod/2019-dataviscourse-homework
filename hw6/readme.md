@@ -96,11 +96,12 @@ For the example, we highlighted the most extreme terms for both political partie
 
 ## Grading
 
-* 10%: Part I (HACKER VERSION EXTRA CREDIT): Data is loaded from the CSV file. JSON file isn't used.   
+* 10%: Part I: Data is loaded.    
 * 30%: Part II: Bubblechart.  
 * 30%: Part III: Table.   
 * 20%: Part IV: Brush.
-* 10%: Part V: Storytelling.     
+* 10%: Part V: Storytelling.   
+* +1 point (HACKER VERSION EXTRA CREDIT): Data is loaded from the CSV file. JSON file isn't used.
 
 
 
