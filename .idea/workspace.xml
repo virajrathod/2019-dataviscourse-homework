@@ -2,15 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0a2085d-7b67-4279-b36d-7e0664fd7239" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/2019-datavis-homework.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/js/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/js/table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/js/tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/js/tree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw6/hw6.html" beforeDir="false" afterPath="$PROJECT_DIR$/hw6/hw6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/assets/aller.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/assets/brasil_cup_font.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/assets/fifa_brazil_logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/assets/fifa_russia_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/assets/font1.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/assets/font2.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/assets/hw4Demo.mov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/data/fifa-matches-2018.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/data/fifa-matches.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/data/fifa-matches.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/data/fifa-tree-2018.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/data/fifa-tree.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/figs/barCharts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/figs/expanded_table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/figs/gamesAggregate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/figs/goals.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/figs/overview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/figs/simpleAggregate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/figs/svgPlots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/figs/table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/figs/tree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/hw5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/js/archive/js - Copy/archive/table-org.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/js/archive/js - Copy/archive/tree - Copy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/js/archive/js - Copy/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/js/archive/js - Copy/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/js/archive/js - Copy/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/js/archive/table-org.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/js/archive/tree - Copy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/js/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/js/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/sample.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw5C/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +51,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="123" column="73" selection-start-line="123" selection-start-column="73" selection-end-line="123" selection-end-column="73" />
+            <state relative-caret-position="986">
+              <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw5/hw5.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw5C/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw5/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-10">
+              <caret line="51" column="18" lean-forward="true" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -32,13 +87,52 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/js/table.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
+            <state relative-caret-position="9571">
               <caret line="563" column="1" selection-start-line="563" selection-start-column="1" selection-end-line="563" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw5C/hw5.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#td#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw5C/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hw5C/js/table.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="466" column="36" lean-forward="true" selection-start-line="466" selection-start-column="36" selection-end-line="466" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw5C/js/tree.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="108" column="43" lean-forward="true" selection-start-line="108" selection-start-column="43" selection-end-line="108" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/js/tree.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="215">
@@ -49,6 +143,20 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>h1</find>
+      <find>font</find>
+      <find>braz</find>
+      <find>agge</find>
+      <find>h2</find>
+      <find>rec</find>
+      <find>style</find>
+      <find>rect</find>
+      <find>rgb(35, 118, 103)</find>
+      <find>color</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -56,19 +164,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/hw6/hw6.html" />
-        <option value="$PROJECT_DIR$/hw5/js/script.js" />
         <option value="$PROJECT_DIR$/hw5/js/table.js" />
         <option value="$PROJECT_DIR$/hw5/js/tree.js" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/2019-datavis-homework.iml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/hw5/js/script.js" />
+        <option value="$PROJECT_DIR$/hw5C/js/script.js" />
+        <option value="$PROJECT_DIR$/hw5C/hw5.html" />
+        <option value="$PROJECT_DIR$/hw5C/styles.css" />
+        <option value="$PROJECT_DIR$/hw5C/js/table.js" />
       </list>
     </option>
   </component>
@@ -99,7 +201,12 @@
             <path>
               <item name="2019-datavis-homework" type="b2602c69:ProjectViewProjectNode" />
               <item name="2019-datavis-homework" type="462c0819:PsiDirectoryNode" />
-              <item name="hw5" type="462c0819:PsiDirectoryNode" />
+              <item name="hw5C" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="2019-datavis-homework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2019-datavis-homework" type="462c0819:PsiDirectoryNode" />
+              <item name="hw5C" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -136,6 +243,14 @@
       <option name="presentableId" value="Default" />
       <updated>1570645503609</updated>
     </task>
+    <task id="LOCAL-00001" summary="Changed dataset">
+      <created>1570646448478</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570646448478</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -145,7 +260,7 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32981783" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32981783" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -163,6 +278,11 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed dataset" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed dataset" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/hw6/hw6.html">
@@ -172,24 +292,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/js/tree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="209" column="42" selection-start-line="209" selection-start-column="42" selection-end-line="209" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="123" column="73" selection-start-line="123" selection-start-column="73" selection-end-line="123" selection-end-column="73" />
+        <state relative-caret-position="986">
+          <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw5/js/table.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
+        <state relative-caret-position="9571">
           <caret line="563" column="1" selection-start-line="563" selection-start-column="1" selection-end-line="563" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/js/tree.js">
+    <entry file="file://$PROJECT_DIR$/hw5C/js/tree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="209" column="42" selection-start-line="209" selection-start-column="42" selection-end-line="209" selection-end-column="42" />
+        <state relative-caret-position="265">
+          <caret line="108" column="43" lean-forward="true" selection-start-line="108" selection-start-column="43" selection-end-line="108" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="51" column="18" lean-forward="true" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/hw5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5C/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5C/hw5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5C/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5C/js/table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="466" column="36" lean-forward="true" selection-start-line="466" selection-start-column="36" selection-end-line="466" selection-end-column="36" />
         </state>
       </provider>
     </entry>
