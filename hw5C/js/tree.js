@@ -20,10 +20,10 @@ class Tree {
             width = 600 - margin.left - margin.right,
             height = 900 - margin.top - margin.bottom;
         
-        let gTree = d3.select("body").select("#tree")
+        let TreeG = d3.select("body").select("#tree")
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         
-        //Create a tree and give it a size() of 800 by 300. 
+        //Create a tree and give it a size() of 800 by 300.
         let treemap = d3.tree().size([height, width]);
         
         let i = 0,
@@ -34,7 +34,10 @@ class Tree {
             .id(function(d) { 
                 return d.id;
             })
-            .parentId(function(d) { return d.ParentGame; })
+            .parentId(function(d)
+            {
+            return d.ParentGame;
+            })
             (treeData);
         
         root.x0 = height / 2;
@@ -52,13 +55,18 @@ class Tree {
                 links = treeData.descendants().slice(1);
 
             // Normalize for fixed-depth.
-            nodes.forEach(function(d){ d.y = d.depth * 90});
+            nodes.forEach(function(d)
+            {
+            d.y = d.depth * 90
+            });
 
             // ****************** Nodes section ***************************
 
             // Update the nodes...
             let node = d3.select('#tree').selectAll('g')
-                            .data(nodes, function(d) {return d.id || (d.id = ++i); });
+                         .data(nodes, function(d) {
+                            return d.id || (d.id = ++i);
+                            });
 
             // Enter any new modes at the parent's previous position.
             let nodeEnter = node.enter().append('g')
@@ -129,7 +137,9 @@ class Tree {
 
             // Update the links...
             let link = d3.select('#tree').selectAll('path.link')
-                    .data(links, function(d) { return d.id; });
+                    .data(links, function(d) {
+                    return d.id;
+                    });
 
             // Enter any new links at the parent's previous position.
             let linkEnter = link.enter().insert('path', "g")
@@ -145,7 +155,9 @@ class Tree {
             // Transition back to the parent element position
             linkUpdate.transition()
                 .duration(duration)
-                .attr('d', function(d){ return diagonal(d, d.parent) });
+                .attr('d', function(d){
+                return diagonal(d, d.parent)
+                });
 
             // Remove any exiting links
             let linkExit = link.exit().transition()

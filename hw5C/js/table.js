@@ -4,13 +4,11 @@ class Table {
      * Creates a Table Object
      */
     constructor(teamData, treeObject) {
-        
-        //console.log(teamData[0])
-        
+
         //Maintain reference to the tree Object; 
         this.tree = treeObject; 
 
-        // Create list of all elements that will populate the table
+         /**List of all elements that will populate the table.*/
         // Initially, the tableElements will be identical to the teamData
         this.tableElements = teamData.slice(); // 
 
@@ -46,13 +44,14 @@ class Table {
                         .range([0, this.cell.width]) 
         
         /**Color scales*/
-        /**For aggregate columns  Use colors '#ece2f0', '#016450' for the range.*/
-        //For games/wins/losses
+        /**For aggregate columns
+        /** Use colors '#feebe2' and '#690000' for the range*/
         this.aggregateColorScale = d3.scaleLinear()
                                     .domain([0, d3.max(this.teamData, d => d.value["TotalGames"])])
                                     .range(['#feebe2', '#690000'])
         
-        /**For goal Column. Use colors '#cb181d', '#034e7b'  for the range.*/
+        /**For goal Column*/
+        /** Use colors '#cb181d' and '#034e7b' for the range */
         this.goalColorScale = d3.scaleLinear()
                                 .domain([0, 5, 10])
                                 .range(['#cb181d', '#ffffff', '#034e7b'])  
@@ -74,13 +73,11 @@ class Table {
         
         let maxGoalsMade = d3.max(this.teamData, d => d.value[this.goalsMadeHeader])
         let maxGoalsConceded = d3.max(this.teamData, d => d.value[this.goalsConcededHeader])
-        
         let maxGoals = maxGoalsMade > maxGoalsConceded ? maxGoalsMade : maxGoalsConceded;
         
         this.goalScale.domain([0, maxGoals])
         
-        // Create the x axes for the goalScale.
-        //X-axis
+        // Create the axes
         let xAxis = d3.axisTop().scale(this.goalScale);
         
         //add GoalAxis to header of col 1.
@@ -93,7 +90,7 @@ class Table {
         
         // ******* TODO: PART V *******
 
-        // Set sorting callback for clicking on headers
+        // Set sorting callback for clicking on Team header
         // Clicking on headers should also trigger collapseList() and updateTable(). 
         this.applySorting();
         
@@ -135,7 +132,7 @@ class Table {
         
             
         //Append td elements for the remaining columns. 
-        //Data for each cell is of the type: {'type':<'game' or 'aggregate'>, 'value':<[array of 1 or two elements]>}
+        //Data for each cell is of the type: {'type':<'game' or 'aggregate'>, 'vis' :<'bar', 'goals', or 'text'>, 'value':<[array of 1 or two elements]>}
         let td = tr.selectAll('td')
             .data(function(d) { 
                 
@@ -161,8 +158,7 @@ class Table {
         let self = this;
         
         //Add scores as title property to appear on hover
-        //Done in method - addGoalCharts
-        
+
         //Populate cells (do one type of cell at a time )
         th.text(function(d){ 
                 if(d.type == 'game')

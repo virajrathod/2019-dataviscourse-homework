@@ -1,7 +1,7 @@
 # CS-5630 / CS-6630 Homework 5
-*Due: Friday, October 13, 11:59 pm.* 
+*Due: Friday, October 11, 11:59 pm.*
 
-In this assignment you will explore game statistics from the last Fifa World Cup in 2014. To this end, you will create an interactive table and a tree layout that are linked to each other. 
+In this assignment you will explore game statistics from the last Fifa World Cup in 2018. To this end, you will create an interactive table and a tree layout that are linked to each other. 
 
 We've retrieved the data from [FIFA's website](http://www.fifa.com/fifa-tournaments/statistics-and-records/worldcup/).
 
@@ -41,9 +41,9 @@ Your project structure looks like this:
         styles.css
         assets/
         data/
-        	fifa-matches.csv # use this for the hacker version
-        	fifa-matches.json # use this for the normal version
-        	fifa-tree.csv
+        	fifa-matches-2018.csv # use this for the hacker version
+        	fifa-matches-2018.json # use this for the normal version
+        	fifa-tree-2018.csv
         figs/
         	# figures / videos used in the description
         	# irrelevant for the project
@@ -54,25 +54,25 @@ Your project structure looks like this:
             
         
         	   
-Remember, to be able to access the data files with javascript, you will need to be *serving* the homewor directory, not just opening the HTML file in a browser. If your development environment doesn't already launch a server for you, you can start one with:
-
-    cd path/to/hw3
-    # python 2
-    python -m SimpleHTTPServer
-    # python 3
-    python -m http.server
-
-And you can view the page at [http://localhost:8080](http://localhost:8080)
+Remember, to be able to access the data files with javascript, you will need to be *serving* the homework directory, not just opening the HTML file in a browser:
+```sh
+cd hw5
+# for python 2
+python -m SimpleHTTPServer
+# for python 3
+python -m http.server
+```
+Now, you can view the page at [http://localhost:8080](http://localhost:8080).
 
 ## Loading the Data
 
 There are two versions to this homework: a HACKER VERSION and a regular version. 
 
-In the **regular version**, we load the complete data structure for the table from the `fifa-matches.json` file. We recommend that even if you plan on doing the hacker version, that you start with the front-end first and hence use the JSON.
+In the **regular version**, we load the complete data structure for the table from the `fifa-matches-2018.json` file and store it in the `teamData` variable when you call the constructor of the table. Notice that when building the tree each row in treeData will need to have a unique id. Because the data does not have that field, we created it when reading in the data and stored it in the `id` field. We recommend that even if you plan on doing the hacker version, that you start with the front-end first and hence use the JSON.
 
-In the **HACKER VERSION**, we load the data from a csv file `fifa-matches.csv` and you will have to create the data structure yourself, and store it in `teamData`. 
+In the **HACKER VERSION**, we load the data from a csv file `fifa-matches-2018.csv` and you will have to create the data structure yourself, and store it in `teamData` variable. 
 
-The tree data is loaded from the file `fifa-tree.csv` in the provided code. We read the data in and pass it as an argument to `createTree(treeData);` - this is already implemented in your stub. Notice that when building the tree each row in treeData will need to have a unique id. Because the data does not have that field, we created it when reading in the data and stored it in the `id` field.  
+The tree data is loaded from the file `fifa-tree-2018.csv` in the provided code. We read the data in and pass it as an argument to `createTree(treeData);` - this is already implemented in your stub. As the **regular version**, you also need to create a unique `id` field for each row in treeData.   
 
 If you're not planning on doing the extra credit hacker version, you can move on to Part II. We suggest, however, that you read through it and take a close look at the data structure of the JSON show below. 
 
@@ -87,10 +87,10 @@ This rollup function will collapse the elements in each leaf node using a summar
 
 ```javascript
 teamData = d3.nest()
-    .key(function (d) {
+    .key(d =>{
         return d.Team;
     })
-    .rollup(function (leaves) {
+    .rollup( leaves =>{
         return d3.sum(leaves,function(l){return l.Wins}); 
     })
     .entries(allGames);
@@ -111,25 +111,25 @@ Your output of `d3.nest()` should look like this JSON (with more games).
 [{
    "key": "Brazil",
    "value": {
-       "Goals Made": 11,
-       "Goals Conceded": 14,
-       "Delta Goals": -3,
+       "Goals Made": 8,
+       "Goals Conceded": 3,
+       "Delta Goals": 5,
        "Wins": 4,
-       "Losses": 2,
-       "Result": {"label": "Third Place", "ranking": 5},
-       "TotalGames": 7,
+       "Losses": 1,
+       "Result": {"label": "Quarter Finals", "ranking": 2},
+       "TotalGames": 5,
        "type": "aggregate",
        "games": [{
-           "key": "Netherlands",
+           "key": "Switzerland",
            "value": {
-               "Goals Made": "0",
-               "Goals Conceded": "3",
-               "Delta Goals": [],
-               "Wins": [],
-               "Losses": [],
-               "Result": {"label": "Third Place", "ranking": 5},
+               "Delta Goals": "",
+               "Goals Conceded": "1",
+               "Goals Made": "1",
+               "Losses": "",
+               "Opponent": "Brazil",
+               "Result": {"label": "Group", "ranking": 0},
+               "Wins": "",
                "type": "game",
-               "Opponent": "Brazil"
    			}
 		}]
 	}
@@ -150,7 +150,7 @@ The next step is creating an x axis underneath the goals column header. Notice t
  
 ### Create list to populate table. 
 
-Recall from earlier how our table will be composed of two types of rows. Aggregate rows that contain summary values for all games, and game specific rows that contain information for a given match. In order to facilitate the process of populating this table, we will be keeping an updated list of all data elements we want to display in the table in the global variable `tableElements`. As a first step, just copy  the `teamData` list over to the `tableElements`. Notice that you will have to use .slice() to create a copy, because in javascript, the = operator creates a new reference to the same data! This means that if you simply say a = b in javascript, it creates a reference to b, and any changes in b are reflected in a! We don't want that. 
+Recall from earlier how our table will be composed of two types of rows. Aggregate rows that contain summary values for all games, and game specific rows that contain information for a given match. In order to facilitate the process of populating this table, we will be keeping an updated list of all data elements we want to display in the table in the global variable `tableElements`. As a first step, just copy  the `teamData` list over to the `tableElements`. 
 
 We are now ready to populate the table with aggregate rows! 
 
@@ -181,11 +181,11 @@ A few important pointers:
 Take the following syntax:  
 
 ```javascript
-let td = tr.selectAll("td").data(function(d){ /* create data array here */ });
+let td = tr.selectAll("td").data((d) => { /* create data array here */ });
 ```
-Notice how we are not passing in new data to the `<td>` elements, but only a function that will manipulate the data being passed down from `tr`, which is the parent element. This will generate as many `<td>` elements as there are data elements in the array returned by your function(d){}. 
+Notice how we are not passing in new data to the `<td>` elements, but only a function that will manipulate the data being passed down from `tr`, which is the parent element. And we also need column informations to pass in so that we won't miss column data. This will generate as many `<td>` elements as there are data elements in the array returned by your function(d){}. 
 
-Add a `console.log()` inside the `function(d){}` call to see what the data being passed down looks like. This will make it easier for you to decide what to return as the data you want bound to your `<td>` elements. 
+Add a `console.log()` call to see what the data being passed down looks like. This will make it easier for you to decide what to return as the data you want bound to your `<td>` elements. 
 
 At this point we are only handling aggregate values but because we will be eventually handling game specific data objects, we want to keep track of what kind of data we are passing into these `<td>` elements. This means that the anonymous function defined as a parameter to your `data()` operator (as shown above) should return an object with three fields: `type`, `vis`, and `value`. The first will indicate if this is an `aggregate` or `game` row, the second will serve as a tag for what kind of vis we will use for that data (`bar`, `goals`, or `text` for example), and the third will contain the actual value we want to visualize in that cell.
 
@@ -195,7 +195,7 @@ Now that you have created your row and cell elements, let's make some SVG plots!
 Select all `<td>` elements in the Wins, Losses, and Total Games columns. You can do this by selecting all `<td>`'s and [filtering](https://github.com/d3/d3-selection#selection_filter) by the vis attribute in your data element. Here's an example, applied to a selection `td`:
 
 ```javascript
-td.filter(function (d) {
+td.filter((d) => {
 	return d.vis == 'goals'
 })
 ```
@@ -206,10 +206,11 @@ In each selected element, create a new `<svg>` element and add a `<rect>` elemen
 
 ### Goals Charts
 
-The goals charts visualize a summary of a teams performance: the goals made and the goals conceded are encoded using position, while the goal difference is encoded by a bar. The marks are red for the conceded goals and blue for the made goals. Similarly, a positive goal difference is highlighted by a blue bar, while a negative goal difference is shown in red. Gray markers are used for ties.
+The goals charts visualize a summary of a teams performance: the goals made and the goals conceded are encoded using circles' position, while the goal difference is encoded by a bar. The marks are red for the conceded goals and blue for the made goals. Similarly, a positive goal difference is highlighted by a blue bar, while a negative goal difference is shown in red. Gray markers are used for ties.
+
+In addition, display the goals made and goals conceded in a tooltip when the mouse hovers over the each goals chart.
 
 You should be able to create the goals chart using the same basic approach as for the bars.
-
 
 ### Other Columns
 
@@ -226,9 +227,9 @@ Once you got this far, you have the main view of your visualization up and runni
 
 Next, we'll make it possible to dynamically add the games that a team played. Click on any aggregate row to expand the table and show an extra row for each match played by that country. 
 
-When we show the games played by a team, right underneath the team and before the next team's row, we use a slightly different visual encoding for the goals scored, conceded and the goal difference, to set them apart from the aggregated per-team goals charts visualization. We use the same scale, but we're encoding something different, so we style it differently. We use a "ring" instead of a circle, and a narrow line/rectangle to encode the difference. The first column shows the opponent with an 'x', as in 'xArgentina'. Also, in the Round/Result column, we show the round of the particular game (group phase, round of sixteen, etc.) The other columns are not used for game rows. Here is an example for Germany:
+When we show the games played by a team, right underneath the team and before the next team's row, we use a slightly different visual encoding for the goals scored, conceded and the goal difference, to set them apart from the aggregated per-team goals charts visualization. We use the same scale, but we're encoding something different, so we style it differently. We use a "ring" instead of a circle, and a narrow line/rectangle to encode the difference. The first column shows the opponent with an 'x', as in 'xArgentina'. Also, in the Round/Result column, we show the round of the particular game (group phase, round of sixteen, etc.) The other columns are not used for game rows. Here is an example:
 
-![Expanded Table](figs/expanded_table.png)
+![Expanded Table](figs/expand_new.gif)
 
 You will have to make these distinctions in your `updateTable()` function based on whether an element of the `tableElements` list has the `type: aggregate` field or not. 
 
@@ -243,8 +244,6 @@ There are three cases you have to deal with:
 1. If a team was clicked, and the next element in the list is also a team, add its games to the list following the team's entry. 
 2. If a game was clicked, do nothing. 
 3. If a team was clicked, and the next element in the list is a game, it means that the team's games are already expanded and we want to remove them! Remove the games associated with the clicked game. 
-
-Use the .splice() operator to both insert and remove rows from the table. 
 
 Once the list is updated, we can call `updateTable()` and watch the magic happen!
 
@@ -263,6 +262,8 @@ matches played by a country, and the other is for a specific game. When implemen
 
 *We've included CSS to change your cursor to an arrow icon to indicate that a table column is sortable. In a real system, you'd probably also want to show a glyph to indicate that the column is sortable. [Here](https://datatables.net/examples/basic_init/table_sorting.html) is a particularly well designed example of using glyphs for that purpose.*  
 
+![sorting](figs/sorting_new.gif)
+
 ## Part VI: Create Tree
 
 Now we will create a tree layout for all the games in the second stage. 
@@ -274,8 +275,8 @@ We'l start off by implementing `createTree(treeData)` that takes as an argument 
 
 ```javascript
 let root = d3.stratify()
-    .id(function(d) { return d.name; })
-    .parentId(function(d) { return d.parent; })
+    .id(d => { return d.name; })
+    .parentId(d => { return d.parent; })
     (data);
 ```
 
@@ -283,7 +284,7 @@ Where `.id` is unique identifier for each node and `.parentId` indicates what fi
 
 *This syntax might be strange to you. `d3.stratify()` returns a function, and the function that stratify returns is later called using the `(data)` expression. Hence, the function returned by `stratify()` is then run with data as a parameter. The function that is returned, however, also has parameters - `id` and `parentid` that we can set. In other words, `d3.stratify()` is a generator for a function to stratify your dataset.* 
 
-Once you have created the tree, color the nodes for winning teams in red and losing teams in blue as in the figure below. 
+Once you have created the tree, color the nodes for winning teams in blue and losing teams in red as in the figure below.
 
 ![tree](figs/tree.png)
 
@@ -292,15 +293,17 @@ Once you have created the tree, color the nodes for winning teams in red and los
 And last but not least link the table and the tree so that when the user hovers over any aggregate row all the games that country played in (and connecting links) are highlighted in the tree. 
 When a user hovers over a game row, only that game should highlight in the tree. Implement this logic in `updateTree()` and `clearTree()`. The former should highlight the appropriate nodes/links and the latter should remove all highlighting from the tree. 
 
+![link](figs/hover_new.gif)
+
 ## DONE! 
 
-Your final solution should behave something [like this](https://youtu.be/QUbkiUiHRJo)
+Your final solution should behave something [like this](https://youtu.be/0LPHsRZfEwM)
 
 ## Grading
 
-The rubrics on the assignment for CS 6630 are:
+The rubrics on the assignment for **CS 6630** are:
 
-10%: Part I (HACKER VERSION EXTRA CREDIT): Data is loaded and aggregated properly from the CSV file. JSON file isn't used.   
+10%: Part I (HACKER VERSION EXTRA CREDIT): Data is loaded from the CSV file. JSON file isn't used.   
 5%: Part II: Table setup is done properly.  
 35%: Part III: Table is properly populated.   
 20%: Part IV: Games are added dynamically 
@@ -308,11 +311,11 @@ The rubrics on the assignment for CS 6630 are:
 20%: Part VI: Tree is properly rendered.  
 10%: Part VII: Link between table and tree works correctly for both aggregate and game rows.      
 
-The rubrics on the assignment for CS 5630 are:
+The rubrics on the assignment for **CS 5630** are:
 
-10%: Part I (HACKER VERSION EXTRA CREDIT): Data is loaded and aggregated properly from the CSV file. JSON file isn't used.   
-5%: Part II: Table setup is done properly.  
+10%: Part I (HACKER VERSION EXTRA CREDIT): Data is loaded from the CSV file. JSON file isn't used.   
+10%: Part II: Table setup is done properly.  
 40%: Part III: Table is properly populated.   
-10%: Part V: Table is properly sorted when user click on column headers.   
+15%: Part V: Table is properly sorted when user click on column headers.   
 25%: Part VI: Tree is properly rendered.  
 10%: Part VII: Link between table and tree works correctly for both aggregate and game rows.  
