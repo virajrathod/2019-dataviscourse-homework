@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'font1';
+    src: url('assets/font1.ttf');
+}
+
+@font-face {
+    font-family:'font2';
+    src: url('assets/font2.ttf');
+}
+
+
+header {
+   margin-top: 0;
+   font-family: 'font1';
+}
+
+h1{
+   margin-top: 20;
+   margin: 30;
+   font-family: 'font1';
+}
+#header-wrap{
+   margin-top: 0;
+   font-family: 'font1';
+}
+
+.view {
+    width: 650px;
+    padding: 0.5em;
+    float: left;
+}
+table {
+    border-collapse: collapse;
+    border: 2px black solid;
+    font: 12px sans-serif;
+}
+
+td {
+    border: 1px black solid;
+    padding: 5px;
+}
+
+
