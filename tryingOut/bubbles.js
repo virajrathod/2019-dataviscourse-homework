@@ -1,3 +1,5 @@
+d3.csv("data/words-without-force-positions.csv").then(hw6Data =>
+
 (function () {
 	var width = 1000,
 		height = 900;
@@ -35,9 +37,20 @@
         .force("y", d3.forceY(height / 2).strength(0.05))
         .force("collide", forceCollide)
 
-	d3.queue()
-	.defer(d3.csv, "words-without-force-positions.csv")
-	.await(ready)
+	let hw6Data = d3.queue()
+	                .defer(d3.csv, "words-without-force-positions.csv")
+	                .await(ready)
+
+    let colors = ["#CD5C5C", "#DC143C", "#C71585", "#FF8C00", "#BDB76B", "#8A2BE2", "#98FB98", "#00008B", "#2F4F4F", "#808080", "#B8860B"];
+    let colScale = d3.scaleOrdinal()
+                     .range(colors)
+
+    let xScale = d3.scaleLinear()
+                   .domain([])
+                   .range([0, width])
+
+    let xAxis = d3.axisBottom();
+    xAxis.scale(xScale);
 
 	function ready (error, datapoints) {
 		var circles = svg.selectAll(".artist")
@@ -48,7 +61,10 @@
 				    return radiusScale(d.total)
 				 })
 		 		 .attr("fill","steelblue")
-		 		 .on('click', function(d){
+		 		 colScale.domain(d3.extent(hw6Data, function(d) {
+		 		    return d.category
+		 		    }));
+		 		 svg.on('click', function(d){
 		 		    console.log(d)
 		 		 })
 		 	//	 .attr("cx",100)
