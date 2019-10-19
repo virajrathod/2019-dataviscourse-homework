@@ -6,7 +6,7 @@
 		    .attr("height",height)
 			.attr("width", width)
 			.append("g")
-			.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+			.attr("transform", "translate(0,0)")
 
     var radiusScale = d3.scaleSqrt().domain([0,50]).range([2,20])
 
@@ -16,18 +16,24 @@
     //STEP 2: Don't have them collide
     //Note: When you have the radius and force EQUAL to each other they won't collide
 
-    var forceX = d3.forceX(function (d){
-        return width / 2
+    var forceXExtremes = d3.forceX(function (d){
+        if (d.total > 25) {
+            return 200
+        } else {
+            return 600
+        }
     }).strength(0.05)
+
+    var forceXGroup = d3.forceX(width / 2).strength(0.05)
 
     var forceCollide = d3.forceCollide(function(d){
-        return height / 2
-    }).strength(0.05)
+        return radiusScale(d.total)
+    })
 
     var simulation = d3.forceSimulation()
-        .force("x", d3.forceX())
-        .force("y", d3.forceY())
-        .force("collide", d3.forceCollide().strength(0.05))
+        .force("x", forceXGroup)
+        .force("y", d3.forceY(height / 2).strength(0.05))
+        .force("collide", forceCollide)
 
 	d3.queue()
 	.defer(d3.csv, "words-without-force-positions.csv")
@@ -48,10 +54,21 @@
 		 	//	 .attr("cx",100)
 		 		// .attr("cy", 300)
 
-        d3.select("#topic").on('click', function(d){
-            console.log("Clicked")
+        d3.select("#extremes").on('click', function(d){
+            simulation
+                .force("x", forceXExtremes)
+                .alphaTarget(0.08)
+                .restart()
+            console.log("Show Extremes")
         })
 
+        d3.select("#group").on('click', function(){
+            simulation
+                .force("x", d3.forceXGroup)
+                .alphaTarget(0.07)
+                .restart()
+//            console.log("Combine the bubbles")
+        })
 
 		 simulation.nodes(datapoints)
             .on('tick', ticked)
