@@ -30,17 +30,17 @@ d3.json('data/fifa-matches-2018.json').then( data => {
 */
 
  // // ********************** HACKER VERSION ***************************
- /**
+/**
   * Loads in fifa-matches-2018.csv file, aggregates the data into the correct format,
   * then calls the appropriate functions to create and populate the table.
   *
-
+*/
     d3.csv("data/fifa-matches-2018.csv").then( matchesCSV => {
 
     /**
     * Loads in the tree information from fifa-tree-2018.csv and calls createTree(csvData) to render the tree.
     *
-
+    */
 
     //Standard Result Ranking
     let resultLabels = {};
@@ -121,19 +121,3 @@ d3.json('data/fifa-matches-2018.json').then( data => {
 
  });
  // ********************** END HACKER VERSION ***************************
-*/
-d3.text("data/data.csv").then(parsedCSV =>  {
-                var parsedCSV = d3.csv.parseRows(data);
-
-                var container = d3.select("body")
-                    .append("table")
-
-                    .selectAll("tr")
-                        .data(parsedCSV).enter()
-                        .append("tr")
-
-                    .selectAll("td")
-                        .data(function(d) { return d; }).enter()
-                        .append("td")
-                        .text(function(d) { return d; });
-            });
