@@ -1,5 +1,5 @@
 (function () {
-	var width = 800,
+	var width = 1000,
 		height = 900;
 	var svg = d3.select ("#chart")
 		    .append ("svg")
@@ -22,9 +22,9 @@
         } else {
             return 600
         }
-    }).strength(0.05)
+    }).strength(0.1)
 
-    var forceXGroup = d3.forceX(width / 2).strength(0.05)
+    var forceXGroup = d3.forceX(width / 2).strength(0.2)
 
     var forceCollide = d3.forceCollide(function(d){
         return radiusScale(d.total)
