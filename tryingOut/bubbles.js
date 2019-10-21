@@ -4,10 +4,10 @@ d3.csv("words-without-force-positions.csv", function (ready, hw6Data) {
 	hw6Data.forEach(function (d, i) {
 		// d.id = d.Team + d.Opponent + i;
 		d.id = i
-		// console.log(d);
-		});
+//		 console.log(d);
+});
 		// (function () {
-			var width = 800,
+			var width = 1000,
 				height = 900;
 			var svg = d3.select("#chart")
 				.append("svg")
@@ -49,9 +49,10 @@ d3.csv("words-without-force-positions.csv", function (ready, hw6Data) {
 				// .defer(hw6Data)
 				.await(ready)
 
-			let colors = ["#CD5C5C", "#DC143C", "#C71585", "#FF8C00", "#BDB76B", "#8A2BE2", "#98FB98", "#00008B", "#2F4F4F", "#808080", "#B8860B"];
+			let colors = ["#CD5C5C", "#DC143C", "#C71585", "#FF8C00", "#BDB76B", "#8A2BE2"];
 			let colScale = d3.scaleOrdinal()
-				.range(colors)
+			                 .domain([d3.category])
+				             .range(colors)
 //                     .append("g")
 
 			let xScale = d3.scaleLinear()
@@ -75,15 +76,19 @@ d3.csv("words-without-force-positions.csv", function (ready, hw6Data) {
 					.attr("r", function (d) {
 						return radiusScale(d.total)
 					})
+					.style("fill", function(d){
+//					console.log(d);
+					    return colScale(d.category);
+					})
 					.style("stroke", "black")
 					.attr("fill", "red")
 
-				 colScale.domain(d3.extent(hw6Data, function (d) {
-				 	return colScale(d.category)
-				 }));
-		 		 .attr("fill", colScale)
+//				 colScale.domain(d3.extent(hw6Data, function (d) {
+//				 	return colScale(d.category)
+//				 }));
+//		 		 .attr("fill", colScale)
 		 		 
-		 		 svg.on('click', function(d){
+		 		 circles.on('click', function(d){
 		 		    console.log(d)
 		 		 })
 				// .attr("cx",100)
@@ -119,6 +124,7 @@ d3.csv("words-without-force-positions.csv", function (ready, hw6Data) {
 				}
 
 			}
+//			});
 		// })();
 
 	});
