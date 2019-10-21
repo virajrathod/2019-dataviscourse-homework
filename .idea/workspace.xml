@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
 <<<<<<< Updated upstream
     <list default="true" id="b0a2085d-7b67-4279-b36d-7e0664fd7239" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hw5/js/script.js" afterPath="$PROJECT_DIR$/hw5/js/script.js" />
       <change beforePath="$PROJECT_DIR$/tryingOut/bubbles.js" afterPath="$PROJECT_DIR$/tryingOut/bubbles.js" />
 =======
     <list default="true" id="c50dcde6-21c3-4927-bdee-9869430e87b5" name="Default Changelist" comment="">
@@ -32,8 +31,8 @@
       <file leaf-file-name="bubbles.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tryingOut/bubbles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="-1030">
+              <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -110,12 +109,14 @@
       <find>defer</find>
       <find>cate</find>
       <find>total</find>
+      <find>forceS</find>
     </findStrings>
     <replaceStrings>
       <replace>hw6Data</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
 <<<<<<< Updated upstream
@@ -235,7 +236,6 @@
 <<<<<<< Updated upstream
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24925596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -480,8 +480,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tryingOut/bubbles.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="-1030">
+          <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
           <folding />
         </state>
       </provider>

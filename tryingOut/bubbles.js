@@ -78,13 +78,14 @@ d3.csv("words-without-force-positions.csv", function (ready, hw6Data) {
 					.style("stroke", "black")
 					.attr("fill", "red")
 
-				// colScale.domain(d3.extent(hw6Data, function (d) {
-				// 	return colScale(d.category)
-				// }));
-//		 		 .attr("fill", colScale)
-//		 		 svg.on('click', function(d){
-//		 		    console.log(d)
-//		 		 })
+				 colScale.domain(d3.extent(hw6Data, function (d) {
+				 	return colScale(d.category)
+				 }));
+		 		 .attr("fill", colScale)
+		 		 
+		 		 svg.on('click', function(d){
+		 		    console.log(d)
+		 		 })
 				// .attr("cx",100)
 				// .attr("cy", 300)
 
