@@ -1,7 +1,7 @@
 d3.csv("data/words-without-force-positions.csv").then(hw6Data =>
 
 (function () {
-	var width = 1000,
+	var width = 800,
 		height = 900;
 	var svg = d3.select ("#chart")
 		    .append ("svg")
@@ -24,9 +24,9 @@ d3.csv("data/words-without-force-positions.csv").then(hw6Data =>
         } else {
             return 600
         }
-    }).strength(0.1)
+    }).strength(0.05)
 
-    var forceXGroup = d3.forceX(width / 2).strength(0.2)
+    var forceXGroup = d3.forceX(width / 2).strength(0.05)
 
     var forceCollide = d3.forceCollide(function(d){
         return radiusScale(d.total)
