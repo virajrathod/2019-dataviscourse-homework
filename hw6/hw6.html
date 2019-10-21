@@ -2,25 +2,67 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8">
     <meta charset="UTF-8">
     <title>Visualization - Homework 6 - The State of the State of the State </title>
-    <link rel="stylesheet" href="styles.css"/>
-    <script src="https://d3js.org/d3.v5.js"></script>
     <script src="https://d3js.org/d3-array.v2.min.js"></script>
     <script src="https://d3js.org/d3-force.v2.min.js"></script>
+    <script src="http://d3js.org/d3.v5.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles.css"/>
+    <script type="application/javascript" src="js/tree.js"></script>
+    <script type="application/javascript" src="js/table.js"></script>
+    <script type="application/javascript" src="js/script.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" rel="stylesheet">
-   <!-- 
-       Bootstrap styling if you want to use it:
+   <!-- Bootstrap styling if you want to use it:
        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 </head>
 <body>
 <div id="header-wrap">
-    <header>
-        <h1>The State of the State of the States</h1>
-        <div>Name: Viraj Rathod; E-Mail: viraj.rathod@utah.edu; UID: u1269659</div>
-    </header>
+    <h1>The State of the State of the States</h1>
+    <div>Name: Viraj Rathod; E-Mail: viraj.rathod@utah.edu; UID: u1269659</div>
+    <!--   <div id="view">
+        <svg width="600" height="900">
+        At the beginning of the year, each governor lays out their policy priorities in their version of the
+        State of the Union address — a “state of the state” address.1 We conducted a text analysis of
+        all 50 governors’ 2019 state of the state speeches to see what issues were talked about the most and
+        whether there were differences between what Democratic and Republican governors were focusing on.
+        </svg>
+    </div> -->
 </div>
+<div class="container">
+    <h2>Score Table</h2>
+        <g id="tree">
+
+            <table id="matchTable">
+                <thead>
+                <tr id="header-row">
+                    <th id="team">Phrase</th>
+                    <td style="text-align:center"> Frequency <span class="glyphicon glyphicon-sort"></span><br/></td>
+                    <td style="text-align:center"> Percentage <span class="glyphicon glyphicon-sort"></span><br/></td>
+                    <td>Total</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td id="goalHeader"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </g>
+
+</div>
+
+<script type="application/javascript" src="js/tree.js"></script>
+<script type="application/javascript" src="js/table.js"></script>
+<script type="application/javascript" src="js/script.js"></script>
 </body>
 </html>
