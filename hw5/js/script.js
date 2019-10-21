@@ -1,34 +1,3 @@
-    /**
-     * Loads in the table information from fifa-matches.json
-     */
-
-// d3.json('data/fifa-matches.json',function(error,data){
-
-    /**
-     * Loads in the tree information from fifa-tree.csv and calls createTree(csvData) to render the tree.
-     *
-     */
-    /*
-    d3.csv("data/fifa-tree.csv", function (error, csvData) {
-
-        //Create a unique "id" field for each game
-        csvData.forEach(function (d, i) {
-            d.id = d.Team + d.Opponent + i;
-        });
-
-        //Create Tree Object
-        let tree = new Tree();
-        tree.createTree(csvData);
-
-        //Create Table Object and pass in reference to tree object (for hover linking)
-        let table = new Table(data,tree);
-
-        table.createTable();
-        table.updateTable();
-    });
-});
-*/
-
 
  // // ********************** HACKER VERSION ***************************
  /**
@@ -65,35 +34,35 @@
     resultRanks['7'] = {'label' : 'Winner', 'ranking' : 7}
 
     let matchArray = d3.nest()
-                        .key(function(d) {return d.Team} )
-                        .rollup(function(leaves) {
-                            return {
-                                "Goals Made": d3.sum(leaves, function(d) {return parseFloat(d['Goals Made']);}),
-                                "Goals Conceded": d3.sum(leaves, function(d) {return parseFloat(d['Goals Conceded']);}),
-                                "Delta Goals": d3.sum(leaves, function(d) {return parseFloat(d['Delta Goals']);}),
-                                "Wins": d3.sum(leaves, function(d) {return parseFloat(d['Wins']);}),
-                                "Losses": d3.sum(leaves, function(d) {return parseFloat(d['Losses']);}),
-                                "TotalGames": d3.sum(leaves, function(d) {return 1;}),
-                                "Result": d3.max(leaves, function(d) {return resultLabels[d['Result']]['ranking'];}),
-                                "type": 'aggregate',
-                                "games" : d3.nest()
-                                            .key(function(d) {return d.Opponent} )
-                                            .rollup(function(subleaves) {
-                                                //console.log(subleaves[0])
-                                                return {
-                                                    'type' : 'game',
-                                                    "Goals Made": d3.sum(subleaves, function(d) {return parseFloat(d['Goals Made']);}),
-                                                    "Goals Conceded": d3.sum(subleaves, function(d) {return parseFloat(d['Goals Conceded']);}),
-                                                    'Opponent' : subleaves[0]['Team'],
-                                                    'Result' : resultLabels[subleaves[0]['Result']],
-                                                    "Delta Goals": [],
-                                                    "Wins": [],
-                                                    "Losses": []
-                                                }
-                                            })
-                                            .sortValues(function(a,b) { return ((a.Result.ranking > b.Result.ranking) ? -1: 1); return 0;} )
-                                            .entries(leaves)
-                            }
+                    .key(function(d) {return d.Team} )
+                    .rollup(function(leaves) {
+                        return {
+                            "Goals Made": d3.sum(leaves, function(d) {return parseFloat(d['Goals Made']);}),
+                            "Goals Conceded": d3.sum(leaves, function(d) {return parseFloat(d['Goals Conceded']);}),
+                            "Delta Goals": d3.sum(leaves, function(d) {return parseFloat(d['Delta Goals']);}),
+                            "Wins": d3.sum(leaves, function(d) {return parseFloat(d['Wins']);}),
+                            "Losses": d3.sum(leaves, function(d) {return parseFloat(d['Losses']);}),
+                            "TotalGames": d3.sum(leaves, function(d) {return 1;}),
+                            "Result": d3.max(leaves, function(d) {return resultLabels[d['Result']]['ranking'];}),
+                            "type": 'aggregate',
+                            "games" : d3.nest()
+                                .key(function(d) {return d.Opponent} )
+                                .rollup(function(subleaves) {
+                                    //console.log(subleaves[0])
+                                    return {
+                                        'type' : 'game',
+                                        "Goals Made": d3.sum(subleaves, function(d) {return parseFloat(d['Goals Made']);}),
+                                        "Goals Conceded": d3.sum(subleaves, function(d) {return parseFloat(d['Goals Conceded']);}),
+                                        'Opponent' : subleaves[0]['Team'],
+                                        'Result' : resultLabels[subleaves[0]['Result']],
+                                        "Delta Goals": [],
+                                        "Wins": [],
+                                        "Losses": []
+                                    }
+                                })
+                                .sortValues(function(a,b) { return ((a.Result.ranking > b.Result.ranking) ? -1: 1); return 0;} )
+                                .entries(leaves)
+                        }
                         })
                         .entries(matchesCSV)
 
