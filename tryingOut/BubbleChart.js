@@ -50,7 +50,8 @@ class BubbleChart {
 
         const xScale = this.getXScale();
 
-        let xAxis = d3.axisBottom();
+        let xAxis = d3.axisBottom()
+                    
             xAxis.scale(xScale);
             
         this.svg
@@ -62,8 +63,11 @@ class BubbleChart {
 
     getXScale() {
        return d3.scaleLinear()
-            .domain([50, 60])
-            .range([0, this.width])
+                .domain([
+                    d3.min(this.data.map(d => d.position)),
+                    d3.max(this.data.map(d => d.position))
+                    ])
+            .range([0, this.width]);
             // .style("padding", "8px");
     }
 
@@ -104,37 +108,31 @@ class BubbleChart {
                 return d.sourceY
             })
 
-        d3.select("#extremes").on('click', function (d) {
-            that.simulation
-                .force("x", this.forceXExtremes)
-                .alphaTarget(0.25)
-                .restart()
-            console.log("Show Extremes")
-        })
-
-        d3.select("#group").on('click', function () {
-            that.simulation
-                .force("x", this.forceXGroup)
-                .alphaTarget(0.25)
-                .restart()
-            console.log("Combine the bubbles")
-        })
-
-        this.simulation.nodes(this.data)
-            .on('tick', ticked)
-
-        this.simulation.stop(this.data)
-
-        function ticked() {
-            circles
-                .attr("cx", function (d) {
-                    return d.x
-                })
-                .attr("cy", function (d) {
-                    return d.y
-                })
-        }
-
+    }
+    // updateBubbles(){
+       
+        toggle_click(){
+            alert("button was clicked");
+           if(document.getElementById('button').clicked == true)
+            {
+                alert("button was clicked");
+            
+                    var updatedBubbles = this.svg.selectAll(".chart")
+                            .data(this.data)
+                            .exit().remove("circles")
+                            .append()
+                            .attr("cx", function(d){
+                                return d.moveX
+                            })
+                            .attr("cy", function(d){
+                                return d.moveY
+                            });
+            }                    
+                             }                   
+                    //  }
+    drawTable(){
+        
     }
 
-}
+        // similarly for lines
+    }
