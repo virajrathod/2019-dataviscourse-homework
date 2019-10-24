@@ -1,3 +1,6 @@
+
+
+
 class BubbleChart {
 
     constructor (data){
@@ -58,6 +61,8 @@ class BubbleChart {
             .append("g")
             .attr("transform", "translate(20,30)")
             .call(xAxis);
+
+        d3.select("#toggle").on("click", this.toggle_click);
     }
 
 
@@ -108,31 +113,36 @@ class BubbleChart {
                 return d.sourceY
             })
 
+
+            
+    }
+    toggle_click() {
+        console.log("TEST")
     }
     // updateBubbles(){
        
-        toggle_click(){
-            alert("button was clicked");
-           if(document.getElementById('button').clicked == true)
-            {
-                alert("button was clicked");
-            
-                    var updatedBubbles = this.svg.selectAll(".chart")
-                            .data(this.data)
-                            .exit().remove("circles")
-                            .append()
-                            .attr("cx", function(d){
-                                return d.moveX
-                            })
-                            .attr("cy", function(d){
-                                return d.moveY
-                            });
-            }                    
-                             }                   
-                    //  }
+                   
+                //  }
     drawTable(){
         
     }
 
         // similarly for lines
-    }
+}
+
+        // alert("button was clicked");
+        // if(document.getElementById('toggle').checked)
+        // {
+        //     alert("button was clicked");
+
+        // var updatedBubbles = this.svg.selectAll(".chart")
+        //         .data(this.data)
+        //         .exit().remove("circles")
+        //         .append()
+        //         .attr("cx", function(d){
+        //             return d.moveX
+        //         })
+        //         .attr("cy", function(d){
+        //             return d.moveY
+        //         });
+        // }                    
