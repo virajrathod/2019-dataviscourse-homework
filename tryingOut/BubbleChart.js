@@ -11,6 +11,8 @@ class BubbleChart {
         this.simulation = null;
         this.forceXGroup = null;
         this.forceCollide = null;
+        this.circleScale = null;
+        this.rCircle = null;
     }
 
     setupData() {
@@ -26,7 +28,7 @@ class BubbleChart {
                     .attr("height", this.height)
                     .attr("width", this.width)
                     .append("g")
-                    .attr("transform", "translate(0,0)");
+                    // .attr("transform", "translate(0,0)");
 
         this.radiusScale = d3.scaleSqrt().domain([0, 50]).range([2, 20]);
         this.forceXGroup = d3.forceX(this.width / 2).strength(0.35)
@@ -53,9 +55,10 @@ class BubbleChart {
             
         this.svg
             .append("g")
-            .attr("transform", "translate(0,30)")
+            .attr("transform", "translate(20,30)")
             .call(xAxis);
     }
+
 
     getXScale() {
        return d3.scaleLinear()
@@ -67,11 +70,23 @@ class BubbleChart {
     drawBubbles() {
         const that = this;
 
+        const circleScale = d3.scaleLinear()
+        .domain([
+        d3.min(that.data.map(d => +d.total)),
+        d3.max(that.data.map(d => +d.total))
+        ])
+        .range([3, 12]);
+
         var circles = this.svg.selectAll(".bubble")
             .data(this.data)
             .enter().append("circle")
             .attr("class", "bubble")
-            .attr("r", d => that.radiusScale(d.total))
+            // .attr("r", d => that.radiusScale(d.total))
+            .attr("transform", "translate(0,120)")
+            .attr("r",function(d){
+                return circleScale(d.total);
+            })
+
             .style("fill", function(d){
 				// console.log(d);
                 return that.colorScale(d.category);
@@ -83,10 +98,10 @@ class BubbleChart {
                 console.log(d)
             })
             .attr("cx",function(d){
-                return d.d_speeches*20
+                return d.sourceX
             })
             .attr("cy", function(d){
-                return d.r_speeches*20
+                return d.sourceY
             })
 
         d3.select("#extremes").on('click', function (d) {
