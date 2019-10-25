@@ -12,7 +12,7 @@ class Table {
         // Initially, the tableElements will be identical to the teamData
         this.tableElements = teamData.slice(); // 
 
-        ///** Store all match data for the 2014 Fifa cup */
+        ///** Store all match data for the 2018 Fifa cup */
         this.teamData = teamData;
 
         //Default values for the Table Headers

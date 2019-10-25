@@ -14,6 +14,27 @@ class BubbleChart {
         this.circleScale = null;
         this.rCircle = null;
         this.checked = false;
+        this.thead = null;
+
+        //Default values for the Table Headers
+        this.tableHeaders = ["Phrases", "Frequency", "Percentage", "Total"]
+
+         /** To be used when sizing the svgs in the table cells.*/
+        this.cell = {
+            "width": 70,
+            "height": 20,
+            "buffer": 15
+        };
+
+        this.bar = {
+            "height": 20
+        };
+
+//        this.gameScale = d3.scaleLinear()
+//                        .domain([0, d3.max(this.teamData, d => d.value["TotalGames"])])
+//                        .range([0, this.cell.width])
+
+
     }
 
     setupData() {
@@ -119,14 +140,17 @@ class BubbleChart {
     // }
 
     updateBubbles(){
-        if (d3.select('#toggle').on("click", this.toggleF)){
+
+
         const that = this;
+//        if (
+        d3.select('#toggle').on("click", toggleF)
 
         function toggleF () {
             // if (document.getElementById('toggle')){
                 // function () {
 
-            // console.log(that.checked)
+             console.log(that.checked)
 
             // that.checked = !that.checked;
 
@@ -144,24 +168,159 @@ class BubbleChart {
                 })
                 that.checked = false;
             }
-        }
-            else {
-                console.log("NONONO")
-                that.svg.selectAll("circle")
-                .data(that.data)
-                .transition()
-                .duration(500)
-                .attr("cx", function(d){
-                    return d.sourceX
-                })           
-                .attr("cy", function(d){
-                    return d.sourceY
-                })
-                that.checked = true;
-            }
+
+//            else {
+//                console.log("NONONO")
+//                that.svg.selectAll("circle")
+//                .data(that.data)
+//                .transition()
+//                .duration(500)
+//                .attr("cx", function(d){
+//                    return d.sourceX
+//                })
+//                .attr("cy", function(d){
+//                    return d.sourceY
+//                })
+//                that.checked = true;
+//            }
         }
 
-        // alert("button was clicked");
+
+//      create_table(data){
+//        let table = d3.select("table");
+//
+//        let headers = table
+//                        .select("thead")
+//                        .selectAll("td:not([id])")
+//                        .data(this.columnKeys)
+//                        .join("td")
+//                        .classed("reverse_resize", d => d.sorted);
+//
+//        headers.on("click", (d, i) => {
+//            if (d.sorted === false) {
+//                let newData = data.sort((a, b) => {
+//                    if (d.head=='phrase'){
+//                        return a[d.head]< b[d.head] ? -1 : 1
+//                    } else {
+//                        return +a[d.head]< +b[d.head] ? -1 : 1}
+//                });
+//                d.sorted = true;
+//                // this.collapseList()
+//                this.create_table(newData);
+//            } else {
+//                let newData = data.sort((a, b) => {
+//                    if (d.head=='phrase'){
+//                        return a[d.head]> b[d.head] ? -1 : 1
+//                    } else {
+//                        return +a[d.head]> +b[d.head] ? -1 : 1}
+//                });
+//                d.sorted = false;
+//                this.create_table(newData);
+//            }
+//        })
+//
+//        let tableRows = table
+//            .select("tbody")
+//            .selectAll("tr")
+//            .data(data)
+//            .join("tr")
+//        let cells = tableRows
+//            .selectAll("td")
+//            .data(d => {
+//                let tmp=d3.entries(d.value);
+//                let tmp2=[[d.total,d.category]];
+//                let tmp1=[d.phrase]
+//                // let type_index=tmp.map(function(oo) { return oo.key; }).indexOf("type");
+//                tmp1.col=1
+//                // tmp1.type=tmp[type_index].value;
+//                tmp2.col=2;
+//                // tmp2.type=tmp[type_index].value;
+//                let tmp3=[[d.percent_of_d_speeches,d.percent_of_r_speeches]]
+//                tmp3.col=3;
+//                let tmp4=[d.total]
+//                tmp4.col=4;
+//                return [tmp1, tmp2,tmp3,tmp4];
+//            }).join('td')
+//        cells.filter((d,i) => {
+//            return d.col==1
+//        }).join(
+//            enter =>
+//                enter.text(d=> d[0]).attr('class','ngram').attr('font-weight','bold'),
+//            update =>
+//                update.text(d=> d[0]).attr('class','ngram').attr('font-weight','bold')
+//            ,
+//            exit => exit.remove()
+//        );
+//        cells.filter((d,i) => {
+//            return d.col==4
+//        }).join(
+//            enter =>
+//                enter.text(d=> d[0]).attr('class','ngram').attr('font-weight','bold'),
+//            update =>
+//                update.text(d=> d[0]).attr('class','ngram').attr('font-weight','bold')
+//            ,
+//            exit => exit.remove()
+//        );
+//        let bars= cells.filter(d => d.col == 2 ).selectAll('.bars').data(d=>d)
+//        bars.exit().remove();
+//
+//        let newbars = bars.enter().append("svg").attr('height',20).attr('width',100).classed("bars", true)
+//        newbars.append('rect').attr('x',8).attr('y',0)
+//            .attr('width', d=>d[0]*2*84/100).attr('height',20)
+//            .attr('fill',d=>this.colorscale(d[1]))
+//            .classed("bars_rect", true)
+//
+//        bars=bars.merge(newbars);
+//
+//        bars.select('.bars_rect').attr('x',8).attr('y',0)
+//            .attr('width', d=>d[0]*2*84/100).attr('height',20)
+//            .attr('fill',d=>this.colorscale(d[1]))
+//
+//        let bars2= cells.filter(d => d.col == 3 ).selectAll('.bars2').data(d=>d)
+//        bars2.exit().remove();
+//
+//        let newbars2 = bars2.enter().append("svg").attr('height',20).attr('width',120).classed("bars2", true)
+//        newbars2.append('rect').attr('x',60).attr('y',0)
+//            .attr('width', d=>d[1]/2).attr('height',20)
+//            .attr('fill',  '#db403d')
+//            .classed("bars_rect2R", true)
+//
+//        newbars2.append('rect').attr('transform','translate (60,0) scale(-1,1)')
+//            .attr('width', d=>d[0]/2).attr('height',20)
+//            .attr('fill',  '#4552db')
+//            .classed("bars_rect2L", true)
+//
+//        bars2=bars2.merge(newbars2);
+//        bars2.select('.bars_rect2R').attr('x',60).attr('y',0)
+//            .attr('width', d=>d[1]/2).attr('height',20)
+//            .attr('fill',  '#db403d')
+//
+//        bars2.select('.bars_rect2L').attr('transform','translate (60,0) scale(-1,1)')
+//            .attr('width', d=>d[0]/2).attr('height',20)
+//            .attr('fill',  '#4552db')
+//
+//    };
+//    drawTable(){
+//        const that = this;
+//
+//        this.thead =
+//
+//        var table = this.svg.select("table")
+//                        .data(this.data)
+//                        .enter().append("table")
+//
+//        var redraw = this.thead.selectAll("th")
+//                           .data(that.data)
+////                        .data("that.data", function(d){
+////                                return d.phrase
+////                            })
+//                            .enter()
+//                            .append("th")
+//                            .text(function (d){
+//                                    return d.phrase
+//                                });
+//        }
+//        // alert("button was clicked");
         // const toggle = document.getElementById('toggle');
         // console.log(toggle)
     }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Visualization - Homework 6 - The State of the State of the State</title>
+    <title>Homework 6 - The State of the State of the State</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
     <body>
@@ -13,8 +13,8 @@
         
         Grouped by topic
         <label class="switch" id="toggle">
-            <input type="checkbox" id="toggle">
-            <span class="slider round" id="toggle"></span>
+            <input type="checkbox">
+            <span class="slider round"></span>
         </label>
         <button id="extremes">Show extremes</button>
             <div id="chart"></div>
@@ -23,5 +23,29 @@
             <script src="table.js"></script>
             <script src="BubbleChart.js"></script>
             <script src="index.js"></script>
+           <div class="view">
+
+
+        <table id="bubbleTable">
+            <thead>
+            <tr id="header-row">
+                <th id="phrase">Phrases</th>
+                <td style="text-align:center"> Frequency <span class="glyphicon glyphicon-sort"></span><br/></td>
+                <td>Percentage</td>
+                <td>Total</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
     </body>
 </html>
