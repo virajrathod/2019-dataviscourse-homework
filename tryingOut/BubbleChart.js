@@ -16,6 +16,7 @@ class BubbleChart {
         this.forceCollide = null;
         this.circleScale = null;
         this.rCircle = null;
+        this.checked = false;
     }
 
     setupData() {
@@ -62,7 +63,7 @@ class BubbleChart {
             .attr("transform", "translate(20,30)")
             .call(xAxis);
 
-        d3.select("#toggle").on("click", this.toggle_click);
+        d3.select("#toggle").on("click", this.updateBubbles);
     }
 
 
@@ -72,7 +73,7 @@ class BubbleChart {
                     d3.min(this.data.map(d => d.position)),
                     d3.max(this.data.map(d => d.position))
                     ])
-            .range([0, this.width]);
+                .range([0, this.width]);
             // .style("padding", "8px");
     }
 
@@ -91,7 +92,7 @@ class BubbleChart {
             .enter().append("circle")
             .attr("class", "bubble")
             // .attr("r", d => that.radiusScale(d.total))
-            .attr("transform", "translate(0,120)")
+            .attr("transform", "translate(70,120)")
             .attr("r",function(d){
                 return circleScale(d.total);
             })
@@ -119,30 +120,56 @@ class BubbleChart {
     toggle_click() {
         console.log("TEST")
     }
-    // updateBubbles(){
-       
-                   
-                //  }
-    drawTable(){
-        
-    }
 
-        // similarly for lines
-}
+    updateBubbles(){
+        d3.select('#toggle').on("click", toggleF);
+        const that = this;
+
+        function toggleF () {
+            // if (document.getElementById('toggle')){
+                // function () {
+
+            console.log(that.checked)
+
+            that.checked = !that.checked;
+
+            if (that.checked) {
+                console.log("testing")
+                that.svg.selectAll("circle")
+                .data(that.data)
+                .transition()
+                .duration(500)
+                .attr("cx", function(d){
+                    return d.moveX
+                })           
+                .attr("cy", function(d){
+                    return d.moveY
+                })
+            }
+            else {
+                console.log("NONONO")
+                that.svg.selectAll("circle")
+                .data(that.data)
+                .transition()
+                .duration(500)
+                .attr("cx", function(d){
+                    return d.sourceX
+                })           
+                .attr("cy", function(d){
+                    return d.sourceY
+                })
+            }
+         
+                // })
+            // }
+            // else {
+            //     console.log("off"); 
+        
+            // }
+        }
 
         // alert("button was clicked");
-        // if(document.getElementById('toggle').checked)
-        // {
-        //     alert("button was clicked");
-
-        // var updatedBubbles = this.svg.selectAll(".chart")
-        //         .data(this.data)
-        //         .exit().remove("circles")
-        //         .append()
-        //         .attr("cx", function(d){
-        //             return d.moveX
-        //         })
-        //         .attr("cy", function(d){
-        //             return d.moveY
-        //         });
-        // }                    
+        // const toggle = document.getElementById('toggle');
+        // console.log(toggle)
+    }
+}
