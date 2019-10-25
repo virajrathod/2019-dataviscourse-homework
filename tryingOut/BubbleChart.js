@@ -1,6 +1,3 @@
-
-
-
 class BubbleChart {
 
     constructor (data){
@@ -117,23 +114,23 @@ class BubbleChart {
 
             
     }
-    toggle_click() {
-        console.log("TEST")
-    }
+    // toggle_click() {
+    //     console.log("TEST")
+    // }
 
     updateBubbles(){
-        d3.select('#toggle').on("click", toggleF);
+        if (d3.select('#toggle').on("click", this.toggleF)){
         const that = this;
 
         function toggleF () {
             // if (document.getElementById('toggle')){
                 // function () {
 
-            console.log(that.checked)
+            // console.log(that.checked)
 
-            that.checked = !that.checked;
+            // that.checked = !that.checked;
 
-            if (that.checked) {
+            // if (that.checked == true) {
                 console.log("testing")
                 that.svg.selectAll("circle")
                 .data(that.data)
@@ -145,7 +142,9 @@ class BubbleChart {
                 .attr("cy", function(d){
                     return d.moveY
                 })
+                that.checked = false;
             }
+        }
             else {
                 console.log("NONONO")
                 that.svg.selectAll("circle")
@@ -158,18 +157,12 @@ class BubbleChart {
                 .attr("cy", function(d){
                     return d.sourceY
                 })
+                that.checked = true;
             }
-         
-                // })
-            // }
-            // else {
-            //     console.log("off"); 
-        
-            // }
         }
 
         // alert("button was clicked");
         // const toggle = document.getElementById('toggle');
         // console.log(toggle)
     }
-}
+// }

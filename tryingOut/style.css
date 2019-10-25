@@ -1,4 +1,9 @@
-
+* {
+  font-family: "Helvetica Neue";
+  }
+  p, text {
+  font-size: 0.85em;
+  }
 .switch {
     position: relative;
     display: inline-block;
