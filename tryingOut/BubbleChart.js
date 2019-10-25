@@ -143,18 +143,14 @@ class BubbleChart {
 
 
         const that = this;
-//        if (
-        d3.select('#toggle').on("click", toggleF)
 
+        that.checked = !that.checked;
+
+        d3.select('#toggle').on("click", this.toggleF)
+
+      if (that.checked == true){
         function toggleF () {
             // if (document.getElementById('toggle')){
-                // function () {
-
-             console.log(that.checked)
-
-            // that.checked = !that.checked;
-
-            // if (that.checked == true) {
                 console.log("testing")
                 that.svg.selectAll("circle")
                 .data(that.data)
@@ -166,23 +162,23 @@ class BubbleChart {
                 .attr("cy", function(d){
                     return d.moveY
                 })
-                that.checked = false;
+                .checked = false;
             }
-
-//            else {
-//                console.log("NONONO")
-//                that.svg.selectAll("circle")
-//                .data(that.data)
-//                .transition()
-//                .duration(500)
-//                .attr("cx", function(d){
-//                    return d.sourceX
-//                })
-//                .attr("cy", function(d){
-//                    return d.sourceY
-//                })
-//                that.checked = true;
-//            }
+        }
+            else {
+                console.log("NONONO")
+                that.svg.selectAll("circle")
+                .data(that.data)
+                .transition()
+                .duration(500)
+                .attr("cx", function(d){
+                    return d.sourceX
+                })
+                .attr("cy", function(d){
+                    return d.sourceY
+                })
+                that.checked = true;
+            }
         }
 
 
