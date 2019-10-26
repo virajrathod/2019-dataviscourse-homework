@@ -5,5 +5,4 @@ d3.json("words.json", data => {
     bubbleChart.drawBubbles();
     bubbleChart.updateBubbles();
 //    bubbleChart.drawTable();
-//    bubbleChart.create_table();
 });

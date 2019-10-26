@@ -17,7 +17,7 @@ class BubbleChart {
         this.thead = null;
 
         //Default values for the Table Headers
-        this.tableHeaders = ["Phrases", "Frequency", "Percentage", "Total"]
+//        this.tableHeaders = ["Phrases", "Frequency", "Percentage", "Total"]
 
          /** To be used when sizing the svgs in the table cells.*/
         this.cell = {
@@ -150,7 +150,7 @@ class BubbleChart {
 
       if (that.checked == true){
         function toggleF () {
-            // if (document.getElementById('toggle')){
+//             if (document.getElementById('toggle')){
                 console.log("testing")
                 that.svg.selectAll("circle")
                 .data(that.data)
@@ -182,16 +182,22 @@ class BubbleChart {
         }
 
 
-//      create_table(data){
-//        let table = d3.select("table");
+//      drawTable(data){
 //
+//       this.tableHeaders = ["phrase", "total", "percent_of_d_speeches", "total"];
+//       this.ColumnValues = this.tableHeaders.map(k => {
+//           return { head: k, sorted: false };
+//       });
+//
+//        let table = d3.select("#bubbleTable");
+
 //        let headers = table
 //                        .select("thead")
 //                        .selectAll("td:not([id])")
-//                        .data(this.columnKeys)
+//                        .data(this.ColumnValues)
 //                        .join("td")
 //                        .classed("reverse_resize", d => d.sorted);
-//
+
 //        headers.on("click", (d, i) => {
 //            if (d.sorted === false) {
 //                let newData = data.sort((a, b) => {
@@ -214,7 +220,7 @@ class BubbleChart {
 //                this.create_table(newData);
 //            }
 //        })
-//
+
 //        let tableRows = table
 //            .select("tbody")
 //            .selectAll("tr")
@@ -236,31 +242,34 @@ class BubbleChart {
 //                let tmp4=[d.total]
 //                tmp4.col=4;
 //                return [tmp1, tmp2,tmp3,tmp4];
-//            }).join('td')
-//        cells.filter((d,i) => {
-//            return d.col==1
-//        }).join(
-//            enter =>
-//                enter.text(d=> d[0]).attr('class','ngram').attr('font-weight','bold'),
-//            update =>
-//                update.text(d=> d[0]).attr('class','ngram').attr('font-weight','bold')
-//            ,
-//            exit => exit.remove()
-//        );
-//        cells.filter((d,i) => {
-//            return d.col==4
-//        }).join(
-//            enter =>
-//                enter.text(d=> d[0]).attr('class','ngram').attr('font-weight','bold'),
-//            update =>
-//                update.text(d=> d[0]).attr('class','ngram').attr('font-weight','bold')
-//            ,
-//            exit => exit.remove()
-//        );
-//        let bars= cells.filter(d => d.col == 2 ).selectAll('.bars').data(d=>d)
+//                    }).join('td')
+//                cells.filter((d,i) => {
+//                    return d.col==1
+//                }).join(enter =>
+//                    enter.text(d=> d[0]).attr('class','ngram').attr('font-weight','bold'),
+//                    update => update.text(d=> d[0]).attr('class','ngram').attr('font-weight','bold'),
+//                    exit => exit.remove()
+//                      );
+//                cells.filter((d,i) => {
+//                    return d.col==4
+//                }).join(
+//                enter =>
+//                    enter.text(d=> d[0]).attr('class','ngram')
+//                                        .attr('font-weight','bold'),
+//                update =>
+//                    update.text(d=> d[0]).attr('class','ngram')
+//                                    .attr('font-weight','bold'),
+//                exit => exit.remove()
+//                  );
+//
+//        let bars = cells.filter(d => d.col == 2 ).selectAll('.bars').data(d=>d)
 //        bars.exit().remove();
 //
-//        let newbars = bars.enter().append("svg").attr('height',20).attr('width',100).classed("bars", true)
+//        let newbars = bars.enter().append("svg")
+//                            .attr('height',20)
+//                            .attr('width',100)
+//                            .classed("bars", true)
+//
 //        newbars.append('rect').attr('x',8).attr('y',0)
 //            .attr('width', d=>d[0]*2*84/100).attr('height',20)
 //            .attr('fill',d=>this.colorscale(d[1]))
@@ -269,13 +278,17 @@ class BubbleChart {
 //        bars=bars.merge(newbars);
 //
 //        bars.select('.bars_rect').attr('x',8).attr('y',0)
-//            .attr('width', d=>d[0]*2*84/100).attr('height',20)
-//            .attr('fill',d=>this.colorscale(d[1]))
+//            .attr('width', d=> d[0]*2*84/100).attr('height',20)
+//            .attr('fill', d=> this.colorscale(d[1]))
 //
 //        let bars2= cells.filter(d => d.col == 3 ).selectAll('.bars2').data(d=>d)
 //        bars2.exit().remove();
 //
-//        let newbars2 = bars2.enter().append("svg").attr('height',20).attr('width',120).classed("bars2", true)
+//        let newbars2 = bars2.enter().append("svg")
+//                            .attr('height',20)
+//                            .attr('width',120)
+//                            .classed("bars2", true)
+//
 //        newbars2.append('rect').attr('x',60).attr('y',0)
 //            .attr('width', d=>d[1]/2).attr('height',20)
 //            .attr('fill',  '#db403d')
